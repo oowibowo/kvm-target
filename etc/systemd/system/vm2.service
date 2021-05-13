@@ -1,0 +1,15 @@
+[Unit]
+Description=Auto start QEMU virtual machine
+After=vgpu.service
+[Service]
+Type=forking
+LimitMEMLOCK=infinity:infinity
+PIDFile=/tmp/qemu_%i.pid
+ExecStart=/bin/sh -c "/var/vm/scripts/start-vm-2.sh"
+ExecStop=/bin/sh -c "/var/vm/scripts/stop-vm.sh"
+TimeoutStopSec=30
+Restart=on-failure
+RestartSec=60s
+[Install]
+WantedBy=multi-user.target
+

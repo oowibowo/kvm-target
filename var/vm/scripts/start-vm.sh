@@ -6,7 +6,7 @@
     -smp 2 \
     -M pc \
     -name Ubuntu-Guest \
-    -hda /var/vm/disk/ubuntu-desktop-1.qcow2 \
+    -cdrom /var/vm/disk/ubuntu-20.04.2.0-desktop-amd64.iso \
     -net nic,model=virtio,macaddr=00:DE:AD:BE:EF:F1 \
     -net user \
     -display egl-headless \

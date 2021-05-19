@@ -18,7 +18,6 @@
     -cpu host \
     -usb -device usb-tablet \
     -bios /usr/share/qemu/OVMF.fd \
+    -vga none \
     -device vfio-pci,sysfsdev=/sys/bus/pci/devices/0000:00:02.0/f50aab10-7cc8-11e9-a94b-6b9d8245bfc1,rombar=0,display=on,x-igd-opregion=off
-
-
 

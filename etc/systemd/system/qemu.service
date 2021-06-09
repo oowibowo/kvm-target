@@ -1,15 +1,13 @@
 [Unit]
 Description=Auto start QEMU virtual machine
-After=vgpu.service
+After=vgpu.service network.target
 [Service]
-Type=forking
-LimitMEMLOCK=infinity:infinity
-PIDFile=/tmp/qemu_%i.pid
+Type=simple
+Environment="type=system-x86_64" "haltcmd=kill -INT "
 ExecStart=/bin/sh -c "/var/vm/scripts/start-vm.sh"
-ExecStop=/bin/sh -c "/var/vm/scripts/stop-vm.sh"
+ExecStop=/bin/sh -c
 TimeoutStopSec=30
-Restart=on-failure
-RestartSec=60s
+KillMode=none
 [Install]
 WantedBy=multi-user.target
 

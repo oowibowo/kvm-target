@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Create TPM
+TPM="tpm0"
+/var/vm/scripts/run-tpm.sh ${TPM}
+
+# Run script
 /usr/bin/qemu-system-x86_64 \
     -enable-kvm \
     -M q35 \
@@ -20,6 +25,8 @@
     -usb -device usb-tablet \
     -global ICH9-LPC.disable_s3=1 \
     -global ICH9-LPC.disable_s4=1 \
+    -chardev socket,id=chrtpm,path=/var/vm/tpm/${TPM}/swtpm-sock \
+    -tpmdev emulator,id=${TPM},chardev=chrtpm -device tpm-tis,tpmdev=${TPM} \
     -device intel-iommu,caching-mode=on,device-iotlb=off \
     -rtc base=localtime,clock=host
 

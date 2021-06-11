@@ -40,6 +40,5 @@ ${IDV_SCRIPT}/run-tpm.sh ${TPM}
     -tpmdev emulator,id=${TPM},chardev=chrtpm -device tpm-tis,tpmdev=${TPM} \
     -device intel-iommu,caching-mode=on,device-iotlb=off \
     -rtc base=localtime,clock=host \
-    -daemonize -pidfile /tmp/qemu_${VMNUM}.pid
-
+    -daemonize -pidfile /tmp/qemu_${VMNUM}.pid &
 

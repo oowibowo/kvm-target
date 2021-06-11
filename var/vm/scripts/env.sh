@@ -9,14 +9,17 @@
 # VM1
 export IDV_VGPU1="f50aab10-7cc8-11e9-a94b-6b9d8245bfc1"
 export IDV_TPM1="tpm1"
+export IDV_VM1="1"
 
 # VM2
 #export IDV_VGPU2="f50aab10-7cc8-11e9-a94b-6b9d8245bfc2"
 #export IDV_TPM2="tpm2"
+#export IDV_VM2="2"
 
 # VM3
 #export IDV_VGPU3="f50aab10-7cc8-11e9-a94b-6b9d8245bfc3"
 #export IDV_TPM3="tpm3"
+#export IDV_VM3="3"
 
 ################################################
 # GVT Variables
@@ -24,7 +27,7 @@ export IDV_TPM1="tpm1"
 export IDV_MASK=0x0000000000000402
 export IDV_VGPU_TYPE="i915-GVTg_V5_4"
 export IDV_BASEVGPU="/sys/bus/pci/devices/0000:00:02.0"
-export IDV_VGPUS=" $VGPU1 $VGPU2 $VGPU3 "
+export IDV_VGPUS=" $IDV_VGPU1 $IDV_VGPU2 $IDV_VGPU3 "
 
 ################################################
 # Directory Variables

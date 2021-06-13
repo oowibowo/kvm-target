@@ -9,7 +9,7 @@ Type=oneshot
 RemainAfterExit=true
 EnvironmentFile=/var/vm/scripts/env.sh
 ExecStart=/var/vm/scripts/create-vgpu.sh
-ExecStop=/var/vm/scripts/destroy-vgpu.sh
+ExecStop=/bin/sh -c
 [Install]
 WantedBy=multi-user.target
 

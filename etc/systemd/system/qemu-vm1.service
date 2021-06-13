@@ -5,7 +5,7 @@ After=vgpu.service network.target
 Type=simple
 Environment="type=system-x86_64" "haltcmd=kill -INT "
 EnvironmentFile=/var/vm/scripts/env.sh
-ExecStart=/bin/sh -c "/var/vm/scripts/start-vm.sh"
+ExecStart=/bin/sh -c "/var/vm/scripts/start-vm1.sh"
 ExecStop=/bin/sh -c
 TimeoutStopSec=30
 KillMode=none

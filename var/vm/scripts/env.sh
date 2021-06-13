@@ -15,9 +15,12 @@ export IDV_TPM1
 export IDV_VM1
 
 # VM2
-#IDV_VGPU2="f50aab10-7cc8-11e9-a94b-6b9d8245bfc2"
-#IDV_TPM2="tpm2"
-#IDV_VM2="2"
+IDV_VGPU2="f50aab10-7cc8-11e9-a94b-6b9d8245bfc2"
+IDV_TPM2="tpm2"
+IDV_VM2="2"
+export IDV_VGPU2
+export IDV_TPM2
+export IDV_VM2
 
 # VM3
 #IDV_VGPU3="f50aab10-7cc8-11e9-a94b-6b9d8245bfc3"

@@ -2,11 +2,11 @@
 Description=Auto start QEMU virtual machine
 After=vgpu.service network.target
 [Service]
-Type=simple
+Type=forking
 Environment="type=system-x86_64" "haltcmd=kill -INT "
 EnvironmentFile=/var/vm/scripts/env.sh
 ExecStart=/bin/sh -c "/var/vm/scripts/start-vm2.sh"
-ExecStop=/bin/sh -c
+ExecStop=/bin/sh -c "/var/vm/scripts/stop-vm2.sh"
 TimeoutStopSec=30
 KillMode=none
 [Install]
